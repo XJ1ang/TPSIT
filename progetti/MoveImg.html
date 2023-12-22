@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Move img </title>
+
+  <style>
+    #container {
+      position: relative;
+      height: 500px;
+      width: 500px;
+      border: 1px solid black;
+      padding: 50px;
+      margin: 20px;
+      background: linear-gradient(320deg, #445753, #40576E);
+    
+
+    #stella {
+      position: relative;
+      height: 100px;
+      width: 100px;
+      padding: 5px;
+
+    }
+
+    #button1 {
+      position: absolute;
+      left: 40%;
+    }
+
+    #button3 {
+      left: 70%;
+      position: absolute;
+      margin-top: 30px;
+    }
+
+    #button4 {
+      position: absolute;
+      left: 10%;
+      margin-top: 30px;
+    }
+
+    #button2 {
+      margin-top: 63px;
+      position: absolute;
+      left: 38%;
+    }
+
+    #posizione {
+      color: white;
+    }
+
+    #img {
+      position: absolute;
+      left: 50%;
+      width: 10px;
+      height: 10px;
+    }
+
+
+    #casa
+      {
+        position:  relative;
+        left: 97%;
+        margin-top: -50px;
+        height: 50px;
+        width: 50px;
+      }
+      #moto
+      {
+        position:  relative;
+        margin-top: -50px;
+        right: 100px;
+        height: 50px;
+        width: 50px;
+      }
+      #sofa
+      {
+        position:  absolute;
+        margin-top: 50%;
+        right: 100px;
+       height: 50px;
+        width: 50px;
+      }
+      #sedia
+      {
+        position:  absolute;
+        margin-top: 80%;
+        left: 5px;
+        height: 50px;
+        width: 50px;
+      }
+
+    
+  }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <img src="IMG/Palla_Tennis.png" id="img">
+    <img src="IMG/casa.png" id="casa">
+    <img src="IMG/moto.jpg" id="moto">
+    <img src="IMG/sofa.png" id="sofa">
+    <img src="IMG/sedia_blu.jpg" id="sedia">
+
+    <div id="stella">
+      <button onclick="su()" id="button1">su </button>
+      <button onclick="dx()" id="button3">dx  </button>
+      <button onclick="sx()" id="button4">sx  </button>
+      <button onclick="giu()" id="button2">giù </button>
+    </div>
+
+    <p id="posizione"></p>
+    <p id="scritta"></p>
+  </div>
+
+  <script>
+    const movingImage = document.getElementById('img');
+    const casa= document.getElementById('casa');
+    const moto= document.getElementById('moto');
+    const sofa= document.getElementById('sofa');
+    const sedia=document.getElementById('sedia');
+    
+    
+   
+
+    function moveImage(direction) {
+      const step = 10;
+      let currentLeft = parseInt(getComputedStyle(movingImage).left) || 0;
+      let currentTop = parseInt(getComputedStyle(movingImage).top) || 0;
+
+      switch (direction) {
+        case 'up':
+          movingImage.style.top = `${currentTop - step}px`;
+          break;
+        case 'down':
+          movingImage.style.top = `${currentTop + step}px`;
+          break;
+        case 'left':
+          movingImage.style.left = `${currentLeft - step}px`;
+          break;
+        case 'right':
+          movingImage.style.left = `${currentLeft + step}px`;
+          break;
+     
+      }
+       let  movingImage_pos = movingImage.getBoundingClientRect();
+      let casa_pos = casa.getBoundingClientRect();
+
+      
+
+      if (
+        movingImage_pos.left < casa_pos.right &&
+        movingImage_pos.right > casa_pos.left &&
+        movingImage_pos.top < casa_pos.bottom &&
+        movingImage_pos.bottom > casa_pos.top
+      ) {
+        document.getElementById("scritta").innerHTML = "casa";
+      } else {
+        document.getElementById("scritta").innerHTML = "";
+      }
+
+
+      
+      let moto_pos = moto.getBoundingClientRect();
+      
+      if (
+        movingImage_pos.left >  moto_pos.right &&
+        movingImage_pos.right <  moto_pos.left &&
+        movingImage_pos.top <  moto_pos.bottom &&
+        movingImage_pos.bottom >  moto_pos.top
+      ) {
+        document.getElementById("scritta").innerHTML = "moto";
+      } else {
+        document.getElementById("scritta").innerHTML = "";
+      }
+
+
+      if (
+        movingImage_pos.left < casa_pos.right &&
+        movingImage_pos.right > casa_pos.left &&
+        movingImage_pos.top < casa_pos.bottom &&
+        movingImage_pos.bottom > casa_pos.top
+      ) {
+        document.getElementById("scritta").innerHTML = "casa";
+      } else {
+        document.getElementById("scritta").innerHTML = "";
+      }
+      
+    }
+
+    function giu() {
+      moveImage('down');
+      document.getElementById("posizione").innerHTML = "giu";
+    }
+
+    function sx() {
+      moveImage('left');
+      document.getElementById("posizione").innerHTML = "sinistra";
+    }
+
+    function dx() {
+      moveImage('right');
+      document.getElementById("posizione").innerHTML = "destra";
+    }
+
+    function su() {
+      moveImage('up');
+      document.getElementById("posizione").innerHTML = "su";
+    }
+
+
+ 
+  </script>
+</body>
+
+</html>
+
+
