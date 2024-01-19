@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatore con saluto</title>
+</head>
+<body>
+
+<p id="counter"></p>
+
+<script>
+
+ 
+        let count = 1; 
+        const counterElement = document.getElementById("counter");
+
+
+        function contatore() {
+            if (count <= 4) {
+
+                counterElement.textContent = ++count;
+            } else {
+
+                counterElement.innerHTML = "";
+                for(i = 1; i <= 10; i++) {
+                    for(j = 1; j <= 10; j++) {
+                       counterElement.innerHTML += i * j + " ";
+                    }
+                    counterElement.innerHTML += '<br>'; 
+                }
+                clearInterval(tempo); 
+            }
+        }
+
+
+        const tempo = setInterval(contatore, 1000);
+
+
+    
+</script>
+
+</body>
+</html>
+
