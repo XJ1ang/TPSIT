@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ciao</title>
+  <style>
+    #bottone1 {
+      width: 100px;
+      height: 100px;
+      border-radius: 100%;
+      background-color: #74E3E5;
+    }
+    #bottone2 {
+      width: 100px;
+      height: 100px;
+      border-radius: 100%;
+      background-color: #74E3E5;
+    }
+
+    #ring {
+      width: 450px;
+      height: 420px;
+      border: 2px solid black;
+      position: relative;
+      border-radius: 100%;
+      background-color: #E1D422;
+      left: 35%;
+      top: 50%;
+    }
+
+    #sumo1 {
+      position: absolute;
+      width: 20%;
+      height: 20%;
+      top: 35%;
+      left: 20%;
+    }
+
+    #sumo2 {
+      position: absolute;
+      width: 20%;
+      height: 20%;
+      top: 35%;
+      right: 20%;
+    }
+
+    #divisore {
+      width: 10px;
+      height: 350px;
+      background-color: white;
+      position: absolute;
+      right: 50%;
+      top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="moveSumo1()" id="bottone1">player 1</button>
+  <button onclick="moveSumo2()" id="bottone2">player 2</button>
+  <p id="vincitore">VINCITORE</p>
+  <div id="ring">
+    <div id="divisore"></div>
+    <img src="sumo1.png" id="sumo1">
+    <img src="sumo2.png" id="sumo2">
+  </div>
+
+<script>
+  let sumo1Element = document.getElementById("sumo1");
+  let sumo2Element = document.getElementById("sumo2");
+  let divisoreElement = document.getElementById("divisore");
+  let vincitoreElement = document.getElementById("vincitore");
+
+  const step = 10;
+
+  let sumo1_move = parseInt(getComputedStyle(sumo1Element).left) || 0;
+  let sumo2_move = parseInt(getComputedStyle(sumo2Element).left) || 0;
+  let divisore_move = parseInt(getComputedStyle(divisoreElement).left);
+
+  function moveSumo1() {
+    sumo1_move += step;
+
+    
+    if (sumo1_move + sumo1Element.offsetWidth > sumo2_move) {
+     
+      sumo2_move += step;
+      sumo2Element.style.left = sumo2_move + "px";
+    }
+
+    sumo1Element.style.left = sumo1_move + "px";
+
+    if (sumo1_move > divisore_move) {
+      vincitoreElement.innerHTML = "Vince player 1";
+    }
+  }
+
+  function moveSumo2() {
+    sumo2_move -= step;
+
+  
+    if (sumo2_move < sumo1_move + sumo1Element.offsetWidth) {
+     
+      sumo1_move -= step;
+      sumo1Element.style.left = sumo1_move + "px";
+    }
+
+    sumo2Element.style.left = sumo2_move + "px";
+
+    if (sumo2_move < divisore_move) {
+      vincitoreElement.innerHTML = "Vince player 2";
+    }
+  }
+</script>
+</body>
+</html>
