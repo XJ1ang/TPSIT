@@ -29,10 +29,15 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="https://xj1ang.github.io/TPSIT/progetti/MoveImg">MoveImg</a></li>
               <li><a class="dropdown-item" href="https://xj1ang.github.io/TPSIT/FlipCard.html">Flip Card</a></li>
-               <li><a class="dropdown-item" href="esercizio3.html">Flip Card</a></li>
-                <li><a class="dropdown-item" href="esercizio4.html">Flip Card</a></li>
+
                <li><a class="dropdown-item" href="esercizio3.html">Esercizio 3</a></li>
                 <li><a class="dropdown-item" href="esercizio4.html">Esercizio 4</a></li>
+                 <li><a class="dropdown-item" href="sumo">Esercizio 4</a></li>
+
+
+
+
+
 
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Something else here</a></li>
