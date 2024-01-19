@@ -1,54 +1,116 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ciao</title>
+  <style>
+    #bottone1 {
+      width: 100px;
+      height: 100px;
+      border-radius: 100%;
+      background-color: #74E3E5;
+    }
+    #bottone2 {
+      width: 100px;
+      height: 100px;
+      border-radius: 100%;
+      background-color: #74E3E5;
+    }
+
+    #ring {
+      width: 450px;
+      height: 420px;
+      border: 2px solid black;
+      position: relative;
+      border-radius: 100%;
+      background-color: #E1D422;
+      left: 35%;
+      top: 50%;
+    }
+
+    #sumo1 {
+      position: absolute;
+      width: 20%;
+      height: 20%;
+      top: 35%;
+      left: 20%;
+    }
+
+    #sumo2 {
+      position: absolute;
+      width: 20%;
+      height: 20%;
+      top: 35%;
+      right: 20%;
+    }
+
+    #divisore {
+      width: 10px;
+      height: 350px;
+      background-color: white;
+      position: absolute;
+      right: 50%;
+      top: 30px;
+    }
+  </style>
 </head>
-
 <body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Xinhui</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="https://xj1ang.github.io/TPSIT/progetti/MoveImg">MoveImg</a></li>
-              <li><a class="dropdown-item" href="https://xj1ang.github.io/TPSIT/FlipCard.html">Flip Card</a></li>
-               <li><a class="dropdown-item" href="esercizio3.html">Esercizio 3</a></li>
-                <li><a class="dropdown-item" href="esercizio4.html">Esercizio 4</a></li>
-            
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-    </div>
-  </nav>
-</body>
+  <button onclick="moveSumo1()" id="bottone1">player 1</button>
+  <button onclick="moveSumo2()" id="bottone2">player 2</button>
+  <p id="vincitore">VINCITORE</p>
+  <div id="ring">
+    <div id="divisore"></div>
+    <img src="sumo1.png" id="sumo1">
+    <img src="sumo2.png" id="sumo2">
+  </div>
 
+<script>
+  let sumo1Element = document.getElementById("sumo1");
+  let sumo2Element = document.getElementById("sumo2");
+  let divisoreElement = document.getElementById("divisore");
+  let vincitoreElement = document.getElementById("vincitore");
+
+  const step = 10;
+
+  let sumo1_move = parseInt(getComputedStyle(sumo1Element).left) || 0;
+  let sumo2_move = parseInt(getComputedStyle(sumo2Element).left) || 0;
+  let divisore_move = parseInt(getComputedStyle(divisoreElement).left);
+
+  function moveSumo1() {
+    sumo1_move += step;
+
+    
+    if (sumo1_move + sumo1Element.offsetWidth > sumo2_move) {
+     
+      sumo2_move += step;
+      sumo2Element.style.left = sumo2_move + "px";
+    }
+
+    sumo1Element.style.left = sumo1_move + "px";
+
+    if (sumo1_move > divisore_move) {
+      vincitoreElement.innerHTML = "Vince player 1";
+    }
+  }
+
+  function moveSumo2() {
+    sumo2_move -= step;
+
+  
+    if (sumo2_move < sumo1_move + sumo1Element.offsetWidth) {
+     
+      sumo1_move -= step;
+      sumo1Element.style.left = sumo1_move + "px";
+    }
+
+    sumo2Element.style.left = sumo2_move + "px";
+
+    if (sumo2_move < divisore_move) {
+      vincitoreElement.innerHTML = "Vince player 2";
+    }
+  }
+</script>
+</body>
 </html>
