@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grafica 1 e grafica 2 (esercizi con div colorati)
+</title>
+  <style>
+
+  
+  </style>
+</head>
+<body>
+  <label for="fname">numero</label>
+  <input type="text" id="variabile_numero_div" name="variabile_numero_div">
+  <button onclick="creazione_div()">creazione div</button>
+
+
+  <script>
+    function creazione_div()
+      {
+        let numero_div=document.getElementById("variabile_numero_div").value;
+        for(let i=0;i<numero_div;i++)
+          {
+            let div=document.createElement("div");
+            div.style.width="10px";
+            div.style.height="10px";
+            div.style.backgroundColor="#218EDB";
+            div.style.border="1px solid black";
+            document.body.appendChild(div);
+          }
+     
+      }
+    
+  </script>
+
+</body>
+  
+</html>
