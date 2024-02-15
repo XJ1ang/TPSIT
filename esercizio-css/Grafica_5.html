@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esercizio 2</title>
+
+  <style>
+    #tboard
+    {
+      width: 500px;
+      height: 500px;
+      border: 1px solid black;
+      background-color: green;
+      
+    }
+    .img
+    {
+      width: 25px;
+      height: 25px;
+    }
+    p
+    {color: white;}
+  </style>
+
+</head>
+
+<body>
+  <div id="tboard">
+    <img src="img/bomba.jpg" alt="bomba" class="img" onclick="cliccato1()">
+    <img src="img/pizza.jpg" alt="bomba" class="img" onclick="cliccato2()">
+    <p id="bomba"> bomba</p>
+    <p id="pizza">pizza </p>
+  </div>
+
+  <script>
+     let cont=0;
+    let cont2=0;
+    function cliccato1()
+      {
+        document.getElementById("bomba").innerHTML=cont++;
+      }
+    function cliccato2()
+      {
+        document.getElementById("pizza").innerHTML=cont2++;
+      }
+  </script>
+</body>
+</html>
