@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+      #es1{
+        display: none;
+      }
+
+      #es2
+      {
+        display: none;
+      }
+
+      #es3
+      {
+        display: none;
+      }
+
+    
+
+    
+    </style>
+
+  </head>
+  <body>
+    <div class="container my-5">
+      <button onclick="esercizio1()" class="btn btn-outline-primary">Esercizio 1</button>
+      <button onclick="esercizio2()" class="btn btn-outline-secondary">Esercizio 2</button>
+      <button onclick="esercizio3()" class="btn btn-outline-success">Ordini</button><br><br>
+      
+      <div id="es1">
+        
+         <label for="peso">peso in kg</label>
+        <input type="number" id="peso"><br><br>
+
+        <label for="altezza"">Altezza in metri</label>
+        <input type="number" id="altezza"><br><br>
+         <button onclick="calcola()" class="btn btn-outline-primary">calcola</button><br>
+        <p id="risultato"></p>
+        
+      </div>
+      <div id="es2">
+        <button onclick="b1()" type="button" class="btn btn-outline-dark">+2</button>
+        <button  onclick="b2()" class="btn btn-outline-dark">+3</button>
+        <button  onclick="b3()" class="btn btn-outline-dark">+7</button><br><br>
+        <p id="num">numero</p>
+      </div>
+      <div id="es3"> 
+        
+        <label for="raggio">Inserisci il raggio del cerchio:</label><br><br>
+        <input type="number" id="raggio"><br><br>
+        <button  onclick="calcolaArea()" class="btn btn-outline-dark">Calcola Area</button><br><br>
+        <p id="risultato2"></p>
+      
+      
+      
+      </div>
+            
+                 
+            
+                  
+            
+            
+                  
+            
+                  
+  </div>
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script>
+      
+      
+      function esercizio1() 
+      {
+        document.getElementById("es1").style.display = "block";
+         document.getElementById("es2").style.display = "none";
+        document.getElementById("es3").style.display = "none";
+      }
+      function esercizio2() 
+      {
+        document.getElementById("es2").style.display = "block";
+         document.getElementById("es1").style.display = "none";
+        document.getElementById("es3").style.display = "none";
+      }
+      function esercizio3() 
+      {
+        document.getElementById("es2").style.display = "none";
+         document.getElementById("es1").style.display = "none";
+        document.getElementById("es3").style.display = "block";
+      }
+
+
+
+
+      
+      function calcola()
+      {
+        let peso = document.getElementById("peso").value;
+        let altezza = document.getElementById("altezza").value;
+
+        let imc = peso / (altezza * altezza);
+
+
+        document.getElementById('risultato').innerHTML = "Il tuo BMI è " + imc.toPrecision(3);
+
+        if(imc<18.5)
+        {
+          document.getElementById('risultato').innerHTML += " e sei Normopeso";
+        }
+        if(imc>=18.5 && imc<25)
+        {
+          document.getElementById('risultato').innerHTML += " e sei Sovrappeso";
+        }
+        if(imc>=25 && imc<30)
+        {
+          document.getElementById('risultato').innerHTML += " e sei sottopeso";
+        }
+        if(imc>=30)
+        {
+          document.getElementById('risultato').innerHTML += " e sei Obeso";
+        }
+      }
+      let num=0;
+      function b1()
+        {
+          num+=2;
+          document.getElementById('num').innerHTML=num;
+        }
+      function b2()
+      {
+        num+=3;
+        document.getElementById('num').innerHTML=num;
+      }
+
+      function b3()
+      {
+        num+=7;
+        document.getElementById('num').innerHTML=num;
+  
+      }
+
+      function calcolaArea()
+        {
+          let raggio = document.getElementById("raggio").value;
+
+              if (!raggio || raggio <= 0) 
+              {
+                  alert("Inserisci un raggio valido.");
+                  return;
+              }
+
+              let area = raggio * raggio * 3.14159;
+              document.getElementById("risultato2").innerHTML = "L'area del cerchio è: " + area + " unità quadrate.";
+          
+        }
+
+
+
+
+
+    </script>
+  </body>
+</html>
