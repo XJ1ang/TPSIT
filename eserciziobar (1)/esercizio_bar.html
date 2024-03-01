@@ -27,15 +27,16 @@
 
   </head>
   <body>
-    <div class="container my-5 ">
+    <div class="container my-5">
       <button onclick="istruzioni()" class="btn btn-outline-primary">Istruzioni</button>
       <button onclick="menu()" class="btn btn-outline-secondary">Menu drink</button>
-      <button onclick="ordini()" class="btn btn-outline-success">Ordini</button><br>
-      <p id="benvenuto"></p>
+      <button onclick="ordini()" class="btn btn-outline-success">Ordini</button><br><br>
+       <p id="benvenuto"></p>
 
 
       
     <div class="container my-5 container text-center" id="menu">
+     
       <div class="row align-items-start ">
 
         
@@ -117,12 +118,30 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
     <script>
-      function istruzioni() {
+      
+      let cont=0;
+      
+      function istruzioni() 
+      {
+        
+        cont+=1;
+        
         document.getElementById("menu").style.display = "none";
-        
-        document.getElementById("benvenuto").innerHTML = "Benvenuto nel Bar virtuale. Clicca su 'Menu drink' per vedere tutti i nostri fantastici drink e su 'Ordini' per visualizzare il carrello.";
-        
         document.getElementById("benvenuto").style.display = "block";
+        if(cont==1)
+        {
+        document.getElementById("benvenuto").innerHTML = "ciao!";
+        }
+        if(cont==2)
+        {
+        document.getElementById("benvenuto").innerHTML = " sono un chatbot pronto per servirti ";
+        }
+        if(cont==3)
+        {
+        document.getElementById("benvenuto").innerHTML = "  premi il secondo bottone per avere la lista dei drink che sono in grado di prepararti.";
+        cont=0;
+        }
+        
         
       }
 
