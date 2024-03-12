@@ -10,6 +10,12 @@
 
     <style>
 
+.container2
+{
+  width: 280px;
+  margin: 0 auto;
+}
+
       .colonna 
       {
       display: flex;
@@ -45,6 +51,88 @@
       }
       
 }
+
+
+      .centro
+      {
+        max-width: 400px;
+      }
+
+    #menu__toggle {
+  opacity: 0;
+}
+#menu__toggle:checked + .menu__btn > span {
+  transform: rotate(45deg);
+}
+#menu__toggle:checked + .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+#menu__toggle:checked + .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+  left: 0 !important;
+}
+.menu__btn {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1;
+  
+}
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after 
+{
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  transition-duration: .25s;
+}
+.menu__btn > span::before {
+  content: '';
+  top: -18px;
+}
+.menu__btn > span::after {
+  content: '';
+  top: -9px;
+}
+.menu__box {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 300px;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  background-color: #000000;
+  box-shadow: 2px 2px 6px rgba(255, 255, 255, 0.4);
+  transition-duration: .25s;
+
+}
+.menu__item {
+  display: block;
+  padding: 12px 24px;
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  transition-duration: .25s;
+  
+}
+.menu__item:hover {
+  background-color: #000000;
+}
+
+
     </style>
 </head>
 
@@ -52,24 +140,42 @@
 <body>
 
 
-  <nav class="navbar" style="background-color: #000000;">
-    <div class="container-fluid">
+  <nav class="navbar"  style="background-color: #000000;">
+    <div class="container-fluid ">
+      
+  <div class="hamburger-menu " style=" z-index: 999;">
+    <input id="menu__toggle" type="checkbox" />
+    <label class="menu__btn colonna" for="menu__toggle" >
+      <span></span>
+    </label>
+
+    <ul class="menu__box colonna">
+      <li><a class="menu__item" href="#">Home</a></li>
+      <li><a class="menu__item" href="#">chi siamo</a></li>
+      <li><a class="menu__item" href="#">collab</a></li>
+      <li><a class="menu__item" href="#">Contact</a></li>
+      <li><a class="menu__item" href="#">Bella</a></li>
+    </ul>
+  </div>
+  
+    <div class="container2">
       <a class="navbar-brand colonna" href="#" style="color:white; font-size: 1rem; ">
         <img src="./Pizza_logo.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
         Pizza Mamma Mia XM
       </a>
     </div>
-  </nav>
+  </div>
+</nav>
 
 
-  <div class="container " >
+  <div class="container" >
     
 
 
     <div class="container text-center " >
-      <div class="row ">
-        <div class="col  my-3">
-          <div class="card" style="width: 25rem;">
+      <div class="row " style=" justify-content: center;">
+        <div class="col  my-3 centro" >
+          <div class="card" style="width: 23rem; justify-content: center; ">
 
             <iframe class="embed-responsive-item" style="height: 18rem;"
             src="https://www.youtube.com/embed/5p-H1LpeEYQ?si=GG2taUwYpYEDQUgh" 
@@ -97,8 +203,8 @@
 
 
 
-        <div class="col my-3"">
-          <div class="card" style="width: 25rem;">
+        <div class="col  my-3 centro"  >
+          <div class="card" style="width: 23rem;">
 
             <iframe class="embed-responsive-item" style="height: 18rem;"
             src="https://www.youtube.com/embed/8g3knlWUUkU?si=27oN1hhUI5azNq5j" title="YouTube video player" 
@@ -113,7 +219,7 @@
                   <p style="padding-top: 2rem;">
                    La pizza alla diavola viene preparata stendendo la pasta per la pizza, condendola con la passata di pomodoro e lasciandola cuocere 
                    in forno per 10 minuti. Uniremo la mozzarella a cubetti, il salamino a fettine,
-                    l’origano e un filo d’olio e cuoceremo per 20 minuti.facile e veloce da prepalare
+                    l’origano e un filo d’olio e cuoceremo per 20 minuti.facile e veloce da prepalare, gustatela con il nostro video
                   </p>
                 </div>
                
@@ -124,8 +230,8 @@
         </div>
 
 
-        <div class="col  my-3"">
-          <div class="card" style="width: 25rem;">
+        <div class="col  my-3 centro" >
+          <div class="card" style="width: 23rem;">
 
             <iframe class="embed-responsive-item" style="height: 18rem;"
             src="https://www.youtube.com/embed/1cl6DNOMzQc?si=_fSNM3nyjJIVV3bZ" title="YouTube video player" 
@@ -134,7 +240,7 @@
               <div class="container my-5 " style="max-width: 23rem;  text-align: left;">
 
                 <div class="embed-responsive embed-responsive-16by9">
-                  <a href="Margherita.html" class="testo">Romana Capricciosa</a>
+                  <a href="Capricciosa.html" class="testo">Romana Capricciosa</a>
                   <p style="padding-top: 2rem;">
                     orem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed tempus felis, ut mollis odio. 
                     Praesent sed ultrices magna. Duis elit nunc, dignissim a rutrum nec, viverra eu velit. Duis tempus, libero ac bi
@@ -152,9 +258,9 @@
 
 
 
-      <div class="row">
-        <div class="col  my-3"">
-          <div class="card" style="width: 25rem;">
+      
+        <div class="col  my-3 centro" >
+          <div class="card" style="width: 23rem;">
 
             <iframe class="embed-responsive-item" style="height: 18rem;"
             src="https://www.youtube.com/embed/tMrK9C4u8Oc?si=jloqMHi6PGIY63Qk" title="YouTube video player" frameborder="0"
@@ -163,7 +269,7 @@
               <div class="container my-5 " style="max-width: 23rem;  text-align: left;">
 
                 <div class="embed-responsive embed-responsive-16by9">
-                  <a href="Margherita.html" class="testo">Romana in Teglia</a>
+                  <a href="teglia.html" class="testo">Romana in Teglia</a>
                   <p style="padding-top: 2rem;">
                     orem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed tempus felis, ut mollis odio. 
                     Praesent sed ultrices magna. Duis elit nunc, dignissim a rutrum nec, viverra eu velit. Duis tempus, libero ac bi
@@ -180,8 +286,8 @@
         </div>
 
 
-        <div class="col  my-3"">
-          <div class="card" style="width: 25rem;">
+        <div class="col  my-3 centro" >
+          <div class="card" style="width: 23rem;">
 
             <iframe class="embed-responsive-item" style="height: 18rem;"
             src="https://www.youtube.com/embed/IlKb6LpRNxc?si=XoJy7kgzW6dQrSkw" title="YouTube video player" frameborder="0"
@@ -190,7 +296,7 @@
               <div class="container my-5 " style="max-width: 23rem;  text-align: left;">
 
                 <div class="embed-responsive embed-responsive-16by9">
-                  <a href="Margherita.html" class="testo">Impasto Pizza</a>
+                  <a href="IMPASTO.html" class="testo">Impasto Pizza</a>
                   <p style="padding-top: 2rem;">
                     orem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed tempus felis, ut mollis odio. 
                     Praesent sed ultrices magna. Duis elit nunc, dignissim a rutrum nec, viverra eu velit. Duis tempus, libero ac bi
@@ -207,8 +313,8 @@
         </div>
 
 
-        <div class="col  my-3">
-          <div class="card" style="width: 25rem;">
+        <div class="col  my-3 centro"  >
+          <div class="card" style="width: 23rem;">
 
             <iframe class="embed-responsive-item" style="height: 18rem;"
             src="https://www.youtube.com/embed/E4r0tGfTh68?si=60SokCRtAOxyNxII" title="YouTube video player"
@@ -217,7 +323,7 @@
               <div class="container my-5 " style="max-width: 23rem;  text-align: left;">
 
                 <div class="embed-responsive embed-responsive-16by9">
-                  <a href="Margherita.html" class="testo">Pizza napoletana</a>
+                  <a href="Napoletana.html" class="testo">Pizza napoletana</a>
                   <p style="padding-top: 2rem;">
                     orem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed tempus felis, ut mollis odio. 
                     Praesent sed ultrices magna. Duis elit nunc, dignissim a rutrum nec, viverra eu velit. Duis tempus, libero ac bi
@@ -235,7 +341,7 @@
 
 
 
-      </div>
+      
     </div>
 
     </div>
