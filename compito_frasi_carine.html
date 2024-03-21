@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+   
+    <style>
+        .larghezza
+        {
+            width: 100%;
+            height: auto;
+        }
+
+.font
+{
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+    
+     
+      </style>
+
+<body>
+    <div class="container">
+
+        
+
+          <div style="  justify-content: center;  display: flex;  ">
+
+           <p id="sogetto" class="font"> </p>
+            <p id="verbo" class="font"></p> 
+            <p id="complemento" class="font" ></p>
+        
+            <p id="agettivo" class="font" ></p>
+                
+        </div>
+
+        
+    <div class="container text-center ">
+
+        <div class="row align-items-start " >
+            <div class="col my-2 " style="min-width:250px;">
+
+                <button  class="btn btn-outline-primary larghezza"  onclick="sogetto()">sogetto</button>
+            </div>
+            <div class="col my-2" style="min-width:250px;">
+
+                <button class="btn btn-outline-primary larghezza" onclick="Verbo()">Verbo</button>
+            </div>
+            <div class="col my-2" style="min-width:250px;">
+
+                <button  class="btn btn-outline-danger larghezza" onclick="Complemento()">Complemento</button>
+            </div>
+
+            <div class="col my-2" style="min-width:250px;">
+                <button class="btn btn-outline-success larghezza" onclick="Agettivo()">Agettivo</button>
+            </div>
+        </div>
+      </div>
+
+
+
+    </div>
+    <script>
+        function sogetto()
+        {
+            let vet=["Mamma ","Fedez ","Gianluca Vacchi ","Ferragni ","Matalella ","Papa Francesco ","Obama ","Xin Jin Ping ", "Ghali ","Xinhui"]
+            let n=Math.floor(Math.random()*10)
+            document.getElementById("sogetto").innerHTML = vet[n]+ " ";
+        }
+
+
+        function Verbo() {
+    let vet = ["ha picchiato", "ha mangiato", "ha leccato", "ha messo", "ha giocato", "ha pregato", "ha dichiarato", "ha vietato", "ha provato", "ha studiato"];
+    let n = Math.floor(Math.random() * 10);
+    document.getElementById("verbo").innerHTML = vet[n] + " "; 
+}
+
+
+        function Complemento()
+        {
+            let vet=["Trump","la cacca","il calippo","il dito","a Fortnite","nella bibbia","la liberta","le guerre", "il ciuccio","TPSIT"]
+            let n=Math.floor(Math.random()*10)
+            document.getElementById("complemento").innerHTML = vet[n]+ " ";
+        }
+
+        function Agettivo()
+        {
+            let vet=["Fortissimo","con gusto","con velocita","lunghissimo","da tantissimo","felicissimo","con forza","giustissimo", "eccitatamente","con felicita"]
+            let n=Math.floor(Math.random()*10)
+            document.getElementById("agettivo").innerHTML = vet[n]+ "  ";
+        }
+
+
+
+
+    </script>
+</body>
+</html>
