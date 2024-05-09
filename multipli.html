@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 Div con 100 numeri casuali</title>
+   
+    <style>
+       
+        .quadrato{
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        .pink{
+            background-color: rgb(30, 255, 0);
+        }
+
+        .blue{
+            background-color: rgb(97, 97, 211);
+        }
+
+
+    </style>
+
+</head>
+<body>
+    
+    <script>
+        let nc;
+        let array_numeri = [2, 3, 5];
+
+        for (let i = 0; i < 100; i++) {
+            nc = Math.floor(Math.random() * 100);
+            
+            // Verifica se nc è un multiplo di uno dei numeri nell'array_numeri
+            let isMultiplo = false;
+            array_numeri.forEach(function(numero) {
+                if (nc % numero === 0) {
+                    isMultiplo = true;
+                }
+            });
+
+            if (isMultiplo) {
+                document.write("<div class='quadrato pink'>" + nc + "</div>");
+            }
+
+
+            else{
+                document.write("<div class='quadrato blue'>"+nc+"</div>")
+            }
+        }
+    </script>
+
+</body>
+</html>
