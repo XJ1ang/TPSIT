@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercitazione 1 temporizzatore</title>
+</head>
+<body>
+<div id="giallo" style="width: 50px; height: 50px; background-color: rgb(251, 255, 0); position: absolute;  border:solid black;"></div>
+<div id="blu"  style="width: 50px; height: 50px; background-color: blue;  position: absolute;  border:solid black;"></div>
+
+<script>
+    let giallo = document.getElementById('giallo');
+    let blu = document.getElementById('blu');
+
+    function checkCollision() {
+        let gialloRect = giallo.getBoundingClientRect();
+        let bluRect = blu.getBoundingClientRect();
+
+        if (bluRect.left<=gialloRect.right &&
+        bluRect.right>=gialloRect.left &&
+        bluRect.top<=gialloRect.bottom &&
+        bluRect.bottom>=gialloRect.top
+        
+        ) {
+            giallo.style.backgroundColor = 'red';
+            blu.style.backgroundColor = 'red';
+        } else {
+            giallo.style.backgroundColor = 'rgb(251, 255, 0)';
+            blu.style.backgroundColor = 'blue';
+        }
+    }
+
+    function box_giallo() {
+        let top = parseInt(Math.random() * 100);
+        let left = parseInt(Math.random() * 100);
+
+        giallo.style.top = top + 'px';
+        giallo.style.left = left + 'px';
+
+        checkCollision();
+    }
+    setInterval(box_giallo, 1000);
+
+    function box_blu() {
+        let top = parseInt(Math.random() * 100);
+        let left = parseInt(Math.random() * 100);
+        blu.style.top = top + 'px';
+        blu.style.left = left + 'px';
+
+        checkCollision();
+    }
+    setInterval(box_blu, 1000);
+</script>
+
+</body>
+</html>
