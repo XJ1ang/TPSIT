@@ -117,6 +117,7 @@ function inizia_gioco() {
         cardImg.src = "./Carte/" + card + ".jpg";
         document.getElementById("you-card").append(cardImg);
     }
+    you_somma=20;
     cont_punti(false);
     checkAce(true);
 }
@@ -164,17 +165,22 @@ let dealerInterval;
 
 function carta_dealer() {
     if (dealer_somma < you_somma && dealer_somma < 17) {
+        cont_punti(true);
         let cardImg = document.createElement("img");
         cardImg.style.marginRight = "5px";
         let card = mazzo.pop();
         contatore_asso(card[0], false);
-        dealer_somma += GetValue(card);
         cardImg.src = "./Carte/" + card + ".jpg";
         document.getElementById("dealer-card").append(cardImg);
-        cont_punti(true);
+        dealer_somma += GetValue(card);
+        
         
     } else {
-        clearInterval(dealerInterval);
+        let diminuzione=diminuzione_asso(false);
+
+        if(diminuzione)
+        {
+            clearInterval(dealerInterval);
         if (you_somma == dealer_somma) {
             document.getElementById('risultato').innerHTML = "Pareggio";
         } else {
@@ -183,6 +189,7 @@ function carta_dealer() {
             } else {
                 document.getElementById('risultato').innerHTML = "HAI PERSO";
             }
+        }  
         }
         cont_punti(true);
     }
