@@ -117,7 +117,7 @@ function inizia_gioco() {
         cardImg.src = "./Carte/" + card + ".jpg";
         document.getElementById("you-card").append(cardImg);
     }
-    you_somma=20;
+   
     cont_punti(false);
     checkAce(true);
 }
