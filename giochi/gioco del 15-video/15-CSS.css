@@ -1,0 +1,23 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#gioco {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#canvas {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #000;
+    width: 100%;
+    max-width: 600px; /* Imposta una larghezza massima */
+    height: auto; /* Mantiene il rapporto d'aspetto */
+}
+

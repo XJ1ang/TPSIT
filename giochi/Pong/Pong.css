@@ -1,0 +1,9 @@
+@media screen and (min-width :1300px ){
+    #giocatore1 {
+        display: none;
+    }
+}
+
+body{
+ background-color: black;
+}
