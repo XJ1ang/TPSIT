@@ -1,0 +1,10 @@
+.col-12 {
+    margin-top: 10px; /* Puoi cambiare il valore a tuo piacimento */
+    margin-bottom: 10px; /* Puoi cambiare il valore a tuo piacimento */
+}
+
+#contorno{
+    background-color: black;
+    height: 100%;
+    margin-top: 50vh;
+}

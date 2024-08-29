@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bootstrap demo</title>
+        <link rel="stylesheet" href="./SondaggioFake.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+      </head>
+<body>
+  <nav class="navbar" style="background-color: black; color: white;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="https://www.harvard.edu/" style="color: rgb(235, 235, 235);">
+        <img src="/img/Harvard_University_shield.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
+        HardavardUniversity
+      </a>
+    </div>
+</nav>
+
+
+
+  <p>Hardvard-Test->LGBT</p1>
+
+
+    <div class="container my-5">
+
+      <div id="boxSondaggio" class="my-5">
+
+        <div class=pagina id="pagina0">
+          <div class="container text-center">
+            <div class="row align-items-start">
+  
+              <div class="col-12">
+               <p1>inserisci il tuo anno di nascita</p1>
+
+               <form id="nascita">
+                <label for="anno"></label>
+                <input name="anno" id="anno">
+               </form>
+              <button onclick="invio()" class="btn btn-outline-secondary my-3">invio</button>
+
+              </div>
+            </div>
+
+        </div>
+
+        </div>
+
+
+        <div  class=pagina  id="pagina1">
+          <div class="container text-center">
+            <div class="row align-items-start">
+
+
+
+
+              <div class="col-12">
+                <img src="./img/Harvard_University_shield.png">
+              </div>
+
+              <div class="col-12">
+              <p1>sei nato maschio o donna?</p1>
+              </div>
+           
+              <div class="col-12">
+                <button onclick="nextPage('pagina2'); uomo()" 
+                type="button" class="btn btn-outline-secondary">uomo</button>
+              </div>
+
+              <div class="col-12">
+                <button onclick="nextPage('pagina2'); donna()"
+                 type="button" class="btn btn-outline-secondary">donna</button>
+              </div>
+  
+  
+            </div>
+
+        </div>
+
+        </div>
+
+
+        <div  class=pagina  id="pagina2">
+          <div class="container text-center">
+            <div class="row align-items-start">
+  
+                 
+              <div class="col-12">
+                <img src="./img/Harvard_University_shield.png">
+              </div>
+
+              <div class="col-12">
+              <p1>sei una persona...</p1>
+              </div>
+           
+              <div class="col-12">
+                <button onclick="nextPage('pagina3')" 
+                type="button" class="btn btn-outline-secondary">autoritaria se ce una cosa fuori apposto lo sistemo!!!</button>
+              </div>
+
+              <div class="col-12">
+                <button onclick="nextPage('pagina3')" 
+                type="button" class="btn btn-outline-secondary">non festagliolo ma mi piace divertirmi a modo mio</button>
+              </div>
+
+              <div class="col-12">
+                <button onclick="nextPage('pagina3')" 
+                type="button" class="btn btn-outline-secondary">pensieroso ma cerco sempre di stare sempre on mind con i miei lavori</button>
+              </div>
+  
+  
+            </div>
+
+        </div>
+
+        </div>
+
+
+        <div  class=pagina  id="pagina3">
+          <div class="container text-center">
+            <div class="row align-items-start">
+
+
+
+             
+              <div class="col-12">
+                <img src="./img/Harvard_University_shield.png">
+              </div>
+
+              <div class="col-12">
+              <p1>Quali sono i tuoi hobby?</p1>
+              </div>
+           
+              <div class="col-12">
+                <button onclick="nextPage('pagina4')" 
+                type="button" class="btn btn-outline-secondary">Nessuna</button>
+              </div>
+
+              <div class="col-12">
+                <button onclick="nextPage('pagina4')"
+                 type="button" class="btn btn-outline-secondary">leggere</button>
+              </div>
+
+              <div class="col-12">
+                <button onclick="nextPage('pagina4')"
+                 type="button" class="btn btn-outline-secondary">guardare il telefono</button>
+              </div>
+              
+              <div class="col-12">
+                <button onclick="nextPage('pagina5')"
+                 type="button" class="btn btn-outline-secondary">andare fuori e allenarmi</button>
+              </div>
+  
+  
+            </div>
+
+        </div>
+
+        </div>
+
+        <div  class=pagina  id="pagina5">
+          <div class="container text-center">
+            <div class="row align-items-start">
+
+
+
+             
+              <div class="col-12">
+                <img src="./img/Harvard_University_shield.png">
+              </div>
+
+              <div class="col-12">
+              <p1>che sport pratichi?</p1>
+              </div>
+           
+              <div class="col-12">
+                <button onclick="nextPage('pagina4')" 
+                type="button" class="btn btn-outline-secondary">palestra</button>
+              </div>
+
+              <div class="col-12">
+                <button onclick="nextPage('pagina4') ;basket()"
+                type="button" class="btn btn-outline-secondary">basket</button>
+              </div>
+
+              <div class="col-12">
+                <button onclick="nextPage('pagina4')" 
+                type="button" class="btn btn-outline-secondary">tennis</button>
+              </div>
+  
+            </div>
+
+        </div>
+
+        </div>
+
+        <div  class=pagina  id="pagina4">
+          <div class="container text-center">
+            <div class="row align-items-start">
+
+
+
+             
+              <div class="col-12">
+                <img src="./img/Harvard_University_shield.png">
+              </div>
+
+              <div class="col-12">
+              <p1>Che modello hai del telefono?</p1>
+              </div>
+           
+              <div class="col-12">
+                <button onclick="nextPage('pagina6') ;tele()"
+                type="button" class="btn btn-outline-secondary">Iphone</button>
+              </div>
+
+              <div class="col-12">
+                <button onclick="nextPage('pagina6')"
+                 type="button" class="btn btn-outline-secondary">Android</button>
+              </div>
+  
+  
+            </div>
+
+        </div>
+
+        </div>
+
+        <div  class=pagina  id="pagina6">
+          <div class="container text-center">
+            <div class="row align-items-start">
+             
+              <div class="col-12">
+                <img src="./img/Harvard_University_shield.png">
+              </div>
+
+              <div class="col-12">
+              <p1>Ti piace il gelato Calippo?</p1>
+              </div>
+           
+              <div class="col-12">
+                <button onclick="nextPage('pagina7')" 
+                type="button" class="btn btn-outline-secondary">no</button>
+              </div>
+
+              <div class="col-12">
+                <button onclick="nextPage('calippo')" 
+                type="button" class="btn btn-outline-secondary">si</button>
+              </div>
+  
+  
+            </div>
+
+        </div>
+
+        </div>
+
+
+        <div  class=pagina  id="calippo">
+          <div class="container text-center">
+            <div class="row align-items-start">
+             
+              <div class="col-12">
+                <img src="./img/Harvard_University_shield.png">
+              </div>
+
+              <div class="col-12">
+              <p1>Quale?</p1>
+              </div>
+           
+              <div class="col-12">
+                <button onclick="nextPage('pagina7')" 
+                type="button" class="btn btn-outline-secondary">CocaCola</button>
+              </div>
+
+              <div class="col-12">
+                <button onclick="nextPage('pagina7')" 
+                type="button" class="btn btn-outline-secondary">limone</button>
+              </div>
+
+              <div class="col-12">
+                <button onclick="nextPage('pagina7'); calippo();"
+                type="button" class="btn btn-outline-secondary">non mi importa basta che la ciuccio</button>
+              </div>
+  
+  
+            </div>
+
+        </div>
+
+        </div>
+
+
+        <div  class=pagina  id="pagina7">
+          <div class="container text-center">
+            <div class="row align-items-start">
+
+
+
+             
+              <div class="col-12">
+                <img src="./img/Harvard_University_shield.png">
+              </div>
+
+              <div class="col-12">
+              <p1>Che tipologie di libri ti attraggono?</p1>
+              </div>
+           
+              <div class="col-12">
+                <button onclick="nextPage('pagina8')"
+                 type="button" class="btn btn-outline-secondary">romantici</button>
+              </div>
+
+              <div class="col-12">
+                <button onclick="nextPage('pagina8')" 
+                type="button" class="btn btn-outline-secondary">avventura</button>
+              </div>
+
+              <div class="col-12">
+                <button onclick="nextPage('pagina8')" 
+                type="button" class="btn btn-outline-secondary">fantasy</button>
+              </div>
+
+              <div class="col-12">
+                <button onclick="nextPage('pagina8')" 
+                type="button" class="btn btn-outline-secondary">giallo</button>
+              </div>
+
+              <div class="col-12">
+                <button onclick="nextPage('pagina8')" 
+                type="button" class="btn btn-outline-secondary">non li leggo</button>
+              </div>
+  
+  
+            </div>
+
+        </div>
+
+        </div>
+
+
+        <div  class=pagina  id="pagina8">
+          <div class="container text-center">
+            <div class="row align-items-start">
+
+
+
+             
+              <div class="col-12">
+                <img src="./img/Harvard_University_shield.png">
+              </div>
+
+              <div class="col-12">
+              <p1>hai un cane?</p1>
+              </div>
+           
+              <div class="col-12">
+                <button onclick="nextPage('animale')"
+                 type="button" class="btn btn-outline-secondary">si</button>
+              </div>
+
+              <div class="col-12">
+                <button onclick="nextPage('pagina9')" 
+                type="button" class="btn btn-outline-secondary">no</button>
+              </div>
+  
+  
+            </div>
+
+        </div>
+
+        </div>
+
+        <div  class=pagina  id="animale">
+          <div class="container text-center">
+            <div class="row align-items-start">
+
+
+
+             
+              <div class="col-12">
+                <img src="./img/Harvard_University_shield.png">
+              </div>
+
+              <div class="col-12">
+              <p1>che razza possiedi</p1>
+              </div>
+           
+              <div class="col-12">
+                <button onclick="nextPage('pagina9')"
+                 type="button" class="btn btn-outline-secondary">bulldog</button>
+              </div>
+
+              <div class="col-12">
+                <button onclick="nextPage('pagina9')" 
+                type="button" class="btn btn-outline-secondary">pastore tedesco</button>
+              </div>
+
+              <div class="col-12">
+                <button onclick="nextPage('pagina9')" 
+                type="button" class="btn btn-outline-secondary">chihuahua</button>
+              </div>
+  
+  
+            </div>
+
+        </div>
+
+        </div>
+
+
+        <div  class=pagina  id="pagina9">
+          <div class="container text-center">
+            <div class="row align-items-start">
+
+
+
+             
+              <div class="col-12">
+                <img src="./img/Harvard_University_shield.png">
+              </div>
+
+              <div class="col-12">
+              <p1>hai figli?</p1>
+              </div>
+           
+              <div class="col-12">
+                <button onclick="nextPage('pagina10')"
+                 type="button" class="btn btn-outline-secondary">si</button>
+              </div>
+
+              <div class="col-12">
+                <button onclick="nextPage('pagina10')" 
+                type="button" class="btn btn-outline-secondary">no</button>
+              </div>
+  
+  
+            </div>
+
+        </div>
+
+        </div>
+
+        <div  class=pagina  id="pagina10">
+          <div class="container text-center">
+            <div class="row align-items-start">
+
+
+
+
+              <div class="col-12">
+                <img src="./img/Harvard_University_shield.png">
+              </div>
+
+              <div class="col-12">
+              <p1>Cosa hai fatto ieri?</p1>
+              </div>
+           
+              <div class="col-12">
+                <button onclick="nextPage('pagina11')" 
+                type="button" class="btn btn-outline-secondary">ho lavorato</button>
+              </div>
+
+              <div class="col-12">
+                <button onclick="nextPage('pagina11')" 
+                type="button" class="btn btn-outline-secondary">niente</button>
+              </div>
+
+              <div class="col-12">
+                <button onclick="nextPage('pagina11')" 
+                type="button" class="btn btn-outline-secondary">preferisco non specificare</button>
+              </div>
+
+              <div class="col-12">
+                <button onclick="nextPage('pagina11')" 
+                type="button" class="btn btn-outline-secondary">sono uscito per una camminata</button>
+              </div>
+
+              <div class="col-12">
+                <button onclick="nextPage('pagina11')" 
+                type="button" class="btn btn-outline-secondary">sono uscito con i miei amici</button>
+              </div>
+  
+  
+            </div>
+
+        </div>
+
+        </div>
+        <div  class=pagina  id="pagina11">
+          <div class="container text-center">
+            <div class="row align-items-start">
+
+
+
+
+              <div class="col-12">
+                <img src="./img/Harvard_University_shield.png">
+              </div>
+
+              <div class="col-12">
+              <p1>Quale diete ti mette più apetito?</p1>
+              </div>
+           
+              <div class="col-12">
+                <button onclick="nextPage('pagina12')" 
+                type="button" class="btn btn-outline-secondary">mediterranea</button>
+              </div>
+
+              <div class="col-12">
+                <button onclick="nextPage('pagina12')" 
+                type="button" class="btn btn-outline-secondary">non mi importa sono vegano</button>
+              </div>
+
+              <div class="col-12">
+                <button onclick="nextPage('pagina12')" 
+                type="button" class="btn btn-outline-secondary">carnivola</button>
+              </div>
+
+              <div class="col-12">
+                <button onclick="nextPage('pagina12')" 
+                type="button" class="btn btn-outline-secondary">asiatica</button>
+              </div>
+
+              <div class="col-12">
+                <button onclick="nextPage('pagina12')" 
+                type="button" class="btn btn-outline-secondary">solo indiana</button>
+              </div>
+
+              <div class="col-12">
+                <button onclick="nextPage('pagina12')" 
+                type="button" class="btn btn-outline-secondary">africana</button>
+              </div>
+  
+  
+            </div>
+
+        </div>
+
+        </div>
+
+
+        <div  class=pagina  id="pagina12">
+          <div class="container text-center">
+            <div class="row align-items-start">
+
+
+
+
+              <div class="col-12">
+                <img src="./img/Harvard_University_shield.png">
+              </div>
+
+              <div class="col-12">
+              <p1>sei felice di ciò che sei e di quello che hai fatto?</p1>
+              </div>
+           
+              <div class="col-12">
+                <button onclick="nextPage('pagina13'); mostra()" 
+                type="button" class="btn btn-outline-secondary">no! perché cerco sempre di migliorare</button>
+              </div>
+
+              <div class="col-12">
+                <button onclick="nextPage('pagina13') ;mostra()" 
+                type="button" class="btn btn-outline-secondary">si e non mi lammento, ce gente che è messa peggio</button>
+              </div>
+
+
+              <div class="col-12">
+                <button onclick="nextPage('pagina13') ;mostra()"  
+                type="button" class="btn btn-outline-secondary">non lo so,ho pauro di pensare al passato</button>
+              </div>
+  
+  
+            </div>
+
+        </div>
+
+        </div>
+
+
+        <div  class=pagina  id="pagina13">
+          <div class="container text-center">
+            <div class="row align-items-start">
+
+
+
+
+              <div class="col-12">
+                <img src="./img/Harvard_University_shield.png">
+              </div>
+
+              <div class="col-12">
+             <h1>RISULTATO</h1>
+             
+              </div>
+
+              <div class="col-12">
+               <p id="risultato"></p>
+              </div>
+  
+  
+            </div>
+
+        </div>
+
+        </div>
+
+
+
+
+        
+
+
+      </div>
+
+      <div id="contorno"class="container-fluid text-center " style="color:aliceblue">
+        <div class="row align-items-start">
+
+          <div class="col-xs my-5">
+
+            <h1>Crediti ai Prof:</h1>
+          </div>
+          <div class="col-xs my-5">
+            <img src="./img/images.jpg">
+
+            <h2> Stanley Schachter</h2>
+            <p>Stanley Schachter è stato uno psicologo statunitense. È considerato il padre della teoria cognitivo-attivazionale delle emozioni, detta anche "teoria dei due fattori" o "teoria del jukebox emotivo</p>
+          </div>
+          <div class="col-xs  my-5">
+            <img src="./img/Leon_Festinger_psicologo (1).jpg">
+            <h2> Leon Festinger</h2>
+            <p>Leon Festinger è stato uno psicologo e sociologo statunitense. Egli è forse meglio noto per la Dissonanza cognitiva e la Teoria Del Confronto Sociale.</p>
+          </div>
+          <div class="col-xs  my-5">
+            <img src="./img/psico1.jpg">
+            <h2> Burrhus Skinner</h2>
+            <p>Burrhus Frederic Skinner è stato uno psicologo statunitense che esercitò una grande influenza nell'ambito del comportamentismo. Fu anche poeta, scrittore, inventore, impegnato a sostegno di riforme sociali.</p>
+          </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        Security & Brand-
+Report Copyright Infringement-
+Report Security Issue-
+Trademark Notice
+<br>
+<br>
+<br>
+<img src="./img/social-media-icons-black-and-white-rounded-free-vector (1).jpg" width="250" height="250">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        il sito è fake a scopo puro mio per fare le burla
+      </div>
+
+
+       
+   
+
+    </div>
+   <script src="./SondaggioFake.js"></script>
+</body>
+</html>
