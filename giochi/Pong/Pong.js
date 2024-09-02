@@ -233,9 +233,10 @@ canvas.addEventListener('mouseup', () => {
 canvas.addEventListener('touchstart', (e) => {
  
     const rectX = ((canvas.width / 2) - 40) - p1;
-    const rectY = canvas.height - (canvas.height * 0.15);
-    const rectWidth = 80;
-    const rectHeight = 10;
+    const rectY = (canvas.height - (canvas.height * 0.15))-20;
+    const rectWidth = 100;
+    const rectHeight = 50;
+
 
     if (isInsideRect(e.touches[0].clientX, e.touches[0].clientY, rectX, rectY, rectWidth, rectHeight)) {
         isDragging = true;
@@ -261,6 +262,4 @@ document.body.addEventListener('touchmove', function(event) {
     event.preventDefault();
 }, { passive: false });
 
-document.body.addEventListener('touchstart', function(event) {
-    event.preventDefault();
-}, { passive: false });
+
