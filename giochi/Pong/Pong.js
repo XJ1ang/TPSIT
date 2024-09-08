@@ -280,15 +280,7 @@ canvas.addEventListener('touchstart', (e) => {
         touch1 = true;
     }
 
-    if (e.touches.length > 1 && isInsideRect(e.touches[1].clientX, e.touches[1].clientY, rectX2, rectY2, rectWidth2, rectHeight2)) {
-        isDragging2 = true;
-        lastX2 = e.touches[1].clientX;
-        touch2 = false;
-    } else if (e.touches.length > 1 && isInsideRect(e.touches[1].clientX, e.touches[1].clientY, rectX, rectY, rectWidth, rectHeight)) {
-        isDragging2 = true;
-        touch2 = true;
-        lastX2 = e.touches[1].clientX;
-    }
+
 });
 
 canvas.addEventListener('touchmove', (e) => {
@@ -302,15 +294,11 @@ canvas.addEventListener('touchmove', (e) => {
     lastX = e.touches[0].clientX;}
 
 
-    if (isDragging2 && !touch2 && e.touches.length > 1) {
-        const deltaX2 = e.touches[1].clientX - lastX2;
-        p2 -= deltaX2;
-        lastX2 = e.touches[1].clientX;
-    } else if (isDragging2 && touch2 && e.touches.length > 1) {
-        const deltaX = e.touches[1].clientX - lastX2;
-        p1 -= deltaX;
-        lastX2 = e.touches[1].clientX;
-    }
+});
+
+
+canvas.addEventListener('touchend', (e) => {
+    isDragging=false;
 });
 
 
