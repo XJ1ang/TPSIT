@@ -302,6 +302,19 @@ canvas.addEventListener('touchend', (e) => {
 });
 
 
+canvas.addEventListener('touchend', (e) => {
+    if (e.touches.length === 1) {
+        // Se rimane solo un tocco, aggiorna le variabili di conseguenza
+        lastX = e.touches[0].clientX;
+        lastX2 = null;
+    } else if (e.touches.length === 0) {
+        // Se non ci sono più tocchi, resetta le variabili
+        lastX = null;
+        lastX2 = null;
+    }
+});
+
+
 // eventi per impedire lo scrolling
 document.body.addEventListener('touchmove', function(event) {
     event.preventDefault();
