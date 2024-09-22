@@ -158,7 +158,10 @@ let barraGiu;
 const show = () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    const griglia = Array.from({ length: (canvas.width * canvas.height) / (cellSize * cellSize) }, (v, i) => i);//??
+    let obj={
+        length: (canvas.width * canvas.height) / (cellSize * cellSize)
+    }
+    const griglia = Array.from(obj, (v, i) => i);//??
 
     //griglia.forEach((idx) => {
     //   const { r, c } = idxToCoords(idx);
