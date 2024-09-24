@@ -10,7 +10,7 @@
             text-align: center;
             margin: 20px;
         }
-        #numbers {
+        .num {
             margin-top: 20px;
             font-size: 24px;
             font-weight: bold;
@@ -21,66 +21,94 @@
             cursor: pointer;
         }
         #checkNumero{
+            margin-top:20px;
             border: 1px solid red;
-            width: 200px;
+            width: 250px;
             height: 200px;
             margin-left:50%;
             transform: translate(-50%,0)
 
+
+        }
+        #diff{
+            margin-top:20px;
+            border: 1px solid rgb(122, 122, 122);
+            width: 250px;
+            height: 200px;
+            margin-left:50%;
+            transform: translate(-50%,0)
         }
     </style>
 </head>
 <body>
     <h1>Generatore di Numeri Casuali</h1>
     <button id="generate-button">Genera Numero Casuale</button>
-    <div id="numbers"></div>
+    <div class="num" id="numbers"></div>
+    <div class="num" id="numbers2"></div>
     <div id="checkNumero"></div>
-
+    <div id="diff"></div>
     <script>
+const diff=(num,num2)=>{
+         const diff = document.getElementById('diff');
+            if(num>=num2){
+                diff.textContent ="la differenza : "+ (num-num2);
+               
+            }
+            if(num<num2){
+                diff.textContent = "la differenza : "+ (num2-num);
+            }       
+        }
         // Funzione per generare un numero casuale tra 1 e 100
         function getRandomNumber() {
             return Math.floor(Math.random() * 100) + 1;
         }
-
         // Funzione per aggiornare il contenuto della pagina
         function updateNumbers() {
-            const numbersDiv = document.getElementById('numbers');
-            const randomNumber = getRandomNumber();
-            numbersDiv.textContent = `Numero Casuale: ${randomNumber}`;
-            check(randomNumber);
-            isPrime(randomNumber);
-        }
+            const checkDiv=document.getElementById('checkNumero');
+            checkDiv.textContent="";
 
+            const numbersDiv = document.getElementById('numbers');
+            const numbersDiv2 = document.getElementById('numbers2');
+            const randomNumber = getRandomNumber();
+            const randomNumber2 = getRandomNumber();
+            numbersDiv.textContent = `Numero Casuale: ${randomNumber}`;
+            numbersDiv2.textContent = `Numero Casuale 2: ${randomNumber2}`;
+            check(randomNumber,1);
+            check(randomNumber2,2);
+            diff(randomNumber,randomNumber2);
+           
+        }
         // Aggiunge un event listener al pulsante
         document.getElementById('generate-button').addEventListener('click', updateNumbers);
+        const check = (num, i) => {
+    const checkDiv = document.getElementById('checkNumero');
+    const diff = document.getElementById('diff');
 
-
-        const check=(num)=>{
-            const checkDiv=document.getElementById('checkNumero');
-            if(num%2==0){
-                checkDiv.textContent = `Numero Casuale: Pari`;
-
-            }
-            else{
-                checkDiv.textContent = `Numero Casuale: Dispari`;
-            }
-
+    if (num % 2 == 0) {
+        checkDiv.innerHTML += `Numero Casuale ${i}: Pari<br>`;
+        checkDiv.innerHTML += `Numero Casuale ${i}: non è un num Primo<br>`;
+    } else {
+        checkDiv.innerHTML += `Numero Casuale ${i}: Dispari<br>`;
+        if (isPrime(num)) {
+            checkDiv.innerHTML += `Numero Casuale ${i}: è un num Primo<br>`;
+        } else {
+            checkDiv.innerHTML += `Numero Casuale ${i}: non è un num Primo<br>`;
         }
+    }
+}
 
-
-         // Funzione per controllare se un numero è primo
-         function isPrime(num) {
-            const checkDiv=document.getElementById('checkNumero');
-            if (num <= 1) return false; // 0 e 1 non sono primi
-            for (let i = 2; i <= Math.sqrt(num); i++) {
-                if (num % i === 0){
-                    checkDiv.textContent += `Numero Casuale: non è un num Primo`;
-                    return false;
-                }  // Divisibile per un numero diverso da 1 e se stesso
-            }
-            checkDiv.textContent += `Numero Casuale: è un num Primo`;
-            return true; // È primo
+// Funzione per controllare se un numero è primo
+function isPrime(num) {
+    if (num <= 1) return false; // 0 e 1 non sono primi
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) {
+            return false; // Divisibile per un numero diverso da 1 e se stesso
         }
+    }
+    return true; // È primo
+}
+
     </script>
 </body>
 </html>
+
