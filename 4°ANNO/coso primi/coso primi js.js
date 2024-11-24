@@ -49,12 +49,14 @@ let NumPari = generatePari(1000);
 
 const GoldBach = () => {
     const arr = [];
+    let arrEscludi=[];
     NumPari.forEach(numero => {
-        for (let i = 0; i < Num.length; i++) {
-            for (let j = 0; j < Num.length; j++) {
-                if (Num[i] + Num[j] == numero) {
+        arrEscludi=[];
+        for (let i = 0; i < numero; i++) {
+            for (let j = 0; j < numero; j++) {
+                if (Num[i] + Num[j] == numero && !(arrEscludi.includes(Num[i]))) {
                     arr.push(`${Num[i]} + ${Num[j]} = ${numero}`);
-                    break;
+                    arrEscludi.push(Num[j]);                
                 }
             }
         }
@@ -64,5 +66,6 @@ const GoldBach = () => {
 
 let x = GoldBach();
 console.log(x);
+
 
 printArrayInDivs(x);
