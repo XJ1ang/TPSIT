@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="/navbar/style.css">
+    <script src="/script.js" defer></script>
+    <style>
+        body {
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 80%;
+            max-width: 600px;
+            min-height: 50vh;
+        }
+
+        .messages {
+            max-height: 300px;
+            overflow-y: auto;
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            background: #f9f9f9;
+        }
+
+        .form-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .form-container input {
+            border: 1px solid gray;
+            padding: 10px;
+            border-radius: 5px;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .form-container button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <%- include('partials/navbar') %>
+
+    <div class="container">
+        <h1>Benvenuto nella Home!</h1>
+
+        <div class="messages">
+            <% if (conversazioni.length > 0) { %>
+                <% conversazioni.forEach(conv => { %>
+                    <p><strong><%= conv.name %>:</strong> <%= conv.txt %></p>
+                <% }); %>
+            <% } else { %>
+                <p>Nessun messaggio presente.</p>
+            <% } %>
+        </div>
+
+        <form action="/index" method="POST" class="form-container">
+            <p><%=avviso%></p>
+            <input type="text" name="inputTesto" placeholder="Inserisci qualcosa..." required>
+            <button type="submit">Invia</button>
+        </form>
+    </div>
+</body>
+</html>

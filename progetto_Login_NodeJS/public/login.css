@@ -1,0 +1,32 @@
+body {
+    height: 100vh;
+   
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+}
+.login-container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+.form-control:focus {
+    border-color: #33b249;
+    box-shadow: 0 0 5px rgba(51, 178, 73, 0.5);
+}
+.btn-login {
+    background-color: #33b249;
+    border: none;
+}
+.btn-login:hover {
+    background-color: #2a8c3d;
+}
+.register-link {
+    margin-top: 10px;
+    display: block;
+    color: #6c757d;
+}
