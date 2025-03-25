@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
       console.log('File JSON vuoto o malformato, inizializzo un array vuoto.');
     }
 
-    res.render('index', { 
+    res.render('home', { 
       conversazioni: conversazioni,
       avviso:""
     });
@@ -66,7 +66,7 @@ app.post('/index', (req, res) => {
   const testo = req.body.inputTesto;
   
   if (!req.session.user) {
-    return res.render('index', { avviso: "Devi effettuare il login per inviare messaggi.", conversazioni: [] });
+    return res.render('home', { avviso: "Devi effettuare il login per inviare messaggi.", conversazioni: [] });
   }
 
   const name = req.session.user.nome;
